@@ -1,0 +1,55 @@
+<view class="page">
+  <view class="bg-top">
+    <image style="top:{{buttonClientRect.top +2}}px" bindtap="back" class="icon-back" src="/res/images/icon-back.png" />
+    <image class="head-bg" src="https://app.kbing123.com/mdedia/home-bg-red.png" />
+    <div style="top:{{buttonClientRect.top +2}}px" class="logo">党员构成分析</div>
+  </view>
+  <view class="menu-items">
+    <view class="title-content">
+      <view class="title">党员画像</view>
+    </view>
+    <view class="panel">
+      <view class="count-content">
+        <view class="man-count" style="width:{{memberData.malePercentage}}%"></view>
+        <view class="count-text">
+          <view class="text">{{memberData.maleCount}}</view>
+          <view class="percent">/ {{memberData.malePercentage}}%</view>
+        </view>
+        <view class="count-text right">
+          <view class="text">{{memberData.femaleCount}}</view>
+          <view class="percent">/ {{memberData.femalePercentage}}%</view>
+        </view>
+      </view>
+      <view class="tip-content">
+        <view>男性</view>
+        <view>女性</view>
+      </view>
+      <view class="tab-content">
+        <view class="tab-item" bindtap="chartsIdxChange" data-idx="{{0}}">
+          <image hidden="{{chartsIdx === 0}}" class="tab" src="/res/images/tab.png" />
+          <image hidden="{{chartsIdx !== 0}}" class="tab" src="/res/images/tab_hover.png" />
+          <view class="{{['tab-text',chartsIdx === 0?'active':'']}}">党龄分布</view>
+        </view>
+        <view class="tab-item" bindtap="chartsIdxChange" data-idx="{{1}}">
+          <image hidden="{{chartsIdx === 1}}" class="tab" src="/res/images/tab.png" />
+          <image hidden="{{chartsIdx !== 1}}" class="tab" src="/res/images/tab_hover.png" />
+          <view class="{{['tab-text',chartsIdx === 1?'active':'']}}">年龄分布</view>
+        </view>
+        <view class="tab-item" bindtap="chartsIdxChange" data-idx="{{2}}">
+          <image hidden="{{chartsIdx === 2}}" class="tab" src="/res/images/tab.png" />
+          <image hidden="{{chartsIdx !== 2}}" class="tab" src="/res/images/tab_hover.png" />
+          <view class="{{['tab-text',chartsIdx === 2?'active':'']}}">学历分布</view>
+        </view>
+      </view>
+      <view class="charts-user">
+        <ec-canvas id="chartPie" class="charts" canvas-id="mychartPie" ec="{{ ec }}"></ec-canvas>
+      </view>
+    </view>
+    <view class="title-content">
+      <view class="title">党员部门分布</view>
+    </view>
+    <view class="charts-user">
+      <ec-canvas id="chartPie2" class="charts" canvas-id="mychartPie2" ec="{{ ec2 }}"></ec-canvas>
+    </view>
+  </view>
+</view>

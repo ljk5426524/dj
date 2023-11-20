@@ -1,0 +1,104 @@
+<view class="page">
+		<view class="bg-top">
+				<image class="head-bg" src="https://app.kbing123.com/mdedia/home-bg.png" />
+				<div style="top:{{buttonClientRect.top +2}}px" class="logo">党建云图</div>
+		</view>
+		<view class="menu-items">
+				<view class="title-content">
+						<view class="title">党建情况总览</view>
+						<navigator class="more" hover-class="none" url="/pages/user/index">
+								党员分析构成
+								<van-icon name="arrow" />
+						</navigator>
+				</view>
+				<view class="panel inline">
+						<view class="static-left">
+								<image class="static-bg" src="/res/images/home/count-bg.png" />
+								<view class="static-text double">
+										<view class="text-label">党支部</view>
+										<view class="text-val">
+												{{homeData.totalDepartments}}
+												<text class="val-unit">个</text>
+										</view>
+								</view>
+								<view class="static-text double">
+										<view class="text-label">党员</view>
+										<view class="text-val">
+												{{homeData.totalPartyMembers}}
+												<text class="val-unit">人</text>
+										</view>
+								</view>
+						</view>
+						<view class="static-right">
+								<view class="static-text">
+										<view class="text-label">非党员</view>
+										<view class="text-val">
+												{{homeData.totalNonPartyMembers}}
+												<text class="val-unit">人</text>
+										</view>
+								</view>
+						</view>
+				</view>
+				<view class="title-content">
+						<view class="title">支部党员统计</view>
+						<navigator class="more" hover-class="none" url="/pages/construct/index">
+								支部建设情况
+								<van-icon name="arrow" />
+						</navigator>
+				</view>
+				<view class="panel column">
+						<view wx:for="{{homeData.departmentPartyMembers}}" wx:key="*this" class="'dept-item',{{index===0?'one':index=== 1?'two':index=== 2?'three':''}}">
+								<image wx:if="{{index=== 0}}" class="icon-medel" src="/res/images/home/one.png" />
+								<image wx:if="{{index=== 1}}" class="icon-medel" src="/res/images/home/two.png" />
+								<image wx:if="{{index=== 2}}" class="icon-medel" src="/res/images/home/three.png" />
+								<view wx:if="{{index=== 3}}" class="icon-medel">NO.{{index+1}}</view>
+								<view class="item-text">
+										<view class="name">{{item.departmentName}}</view>
+										<view class="val">
+												{{item.partyMemberCount}}
+												<text class="val-unit">个</text>
+										</view>
+								</view>
+						</view>
+				</view>
+				<view class="title-content">
+						<view class="title">组织生活</view>
+						<navigator class="more" hover-class="none" url="/pages/life/index">组织生活水平 ></navigator>
+				</view>
+				<view class="charts-user">
+						<view class="charts">
+								<ec-canvas id="chartPie" canvas-id="mychartPie" ec="{{ ec }}"></ec-canvas>
+						</view>
+						<view class="right-content">
+								<view class="chart-item color1">
+										<view class="label">三会一课</view>
+										<view>{{homeData.totalThreeSessionsOneLesson}}个</view>
+										<view class="percent">
+												{{homeData.threeSessionsOneLessonPercentage=== 'NaN'? 0:homeData.threeSessionsOneLessonPercentage}}%
+										</view>
+								</view>
+								<view class="chart-item color2">
+										<view class="label">主题党日活动</view>
+										<view>{{homeData.totalThemePartyDay}}个</view>
+										<view class="percent">
+												{{homeData.themePartyDayPercentage === 'NaN'? 0:homeData.themePartyDayPercentage}}%
+										</view>
+								</view>
+								<view class="chart-item color3">
+										<view class="label">计划要点</view>
+										<view>{{homeData.totalPlanKeyPoints}}个</view>
+										<view class="percent">
+												{{homeData.planKeyPointsPercentage === 'NaN'? 0:homeData.planKeyPointsPercentage}}%
+										</view>
+								</view>
+						</view>
+				</view>
+				<!-- <view class="title-content">
+						<view class="title">党费收缴情况</view>
+				</view>
+				<view class="panel column">
+						<medal-charts></medal-charts>
+						<table-collepse-list></table-collepse-list>
+				</view> -->
+		</view>
+</view>

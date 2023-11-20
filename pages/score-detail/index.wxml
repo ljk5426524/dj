@@ -1,0 +1,77 @@
+<view class="page">
+  <view class="bg-top">
+    <image style="top:{{buttonClientRect.top +2}}px" bindtap="back" class="icon-back" src="/res/images/icon-back.png" />
+    <image class="head-bg" src="https://app.kbing123.com/mdedia/bg-red.png" />
+    <div style="top:{{buttonClientRect.top +2}}px" class="logo">党员积分详情</div>
+  </view>
+  <view class="info-content">
+    <view class="info">
+      <view class="info-items">
+        <image class="avator" src="{{rankDetail.head}}" />
+        <view class="info-item">
+          <view class="name">
+            {{rankDetail.userName}}
+            <text class="dept">{{rankDetail.organizationName}}</text>
+          </view>
+          <view class="job">{{rankDetail.roleCode.includes('admin')?'党支部书记':'党支部成员'}}</view>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y="{{true}}" bindscrolltolower="loadMore" class="menu-items">
+      <view class="card">
+        <image class="bg" src="https://app.kbing123.com/mdedia/card-bg.png" />
+        <view class="tip">积分总览</view>
+        <view class="content">
+          <view>成长总积分</view>
+          <view class="score">{{rankDetail.totalScore}}</view>
+        </view>
+      </view>
+      <view class="score-content">
+        <view class="tab">
+          <view class="{{['tab-item',active === 1 ? 'active' : '']}}" bindtap="changeTab" data-idx="{{1}}">月总积分</view>
+          <view class="{{['tab-item',active === 2 ? 'active' : '']}}" bindtap="changeTab" data-idx="{{2}}">年度积分</view>
+        </view>
+      </view>
+      <view class="data-content">
+        <view class="statics">
+          <!-- <view class="statics-item">
+            <view class="title">全国总排名</view>
+            <view class="value">123123</view>
+          </view> -->
+          <view class="statics-item">
+            <view class="title">组内排名</view>
+            <view class="value">{{active === 1?rankDetail.yearRank:rankDetail.monthRank}}</view>
+          </view>
+          <view class="statics-item">
+            <view class="title">近期日组内排名</view>
+            <view class="value">{{rankDetail.dayRank}}</view>
+          </view>
+        </view>
+        <view class="title-content">
+          <view class="sup-title">本组学习标兵</view>
+          <view class="sub-title">
+            本组
+            <text class="count">{{pageInfo.total}}</text>
+            人参与排名
+          </view>
+        </view>
+        <view class="list-content">
+          <view class="title-line" wx:for="{{scoreList}}" wx:key="id">
+            <view class="idx">{{index+1}}</view>
+            <view class="info">
+              <image class="avator" src="{{item.head}}" />
+              <view>
+                <view class="name">{{item.userName}}</view>
+                <view class="dept">{{item.organizationName}}</view>
+              </view>
+            </view>
+            <view class="val">
+              {{item.totalScore}}
+              <text class="score">分</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

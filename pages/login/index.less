@@ -1,0 +1,104 @@
+.page {
+  height: 100vh;
+  position: relative;
+  background-color: #999;
+
+  .bg {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .login-cotent {
+    box-sizing: border-box;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    padding: 300rpx 64rpx 100rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .welcome {
+      font-size: 36rpx;
+      color: #202021FF;
+      margin-bottom: 20rpx;
+    }
+
+    .title {
+      font-size: 48rpx;
+      color: #202021FF;
+      font-weight: bold;
+    }
+
+    .input-items {
+      width: 100%;
+
+
+      .input-content {
+        margin: 50rpx 0;
+        width: 100%;
+
+        .label {
+          color: #000000D9;
+          font-size: 36rpx;
+          font-weight: bold;
+        }
+
+        .input-item {
+          padding-left: 0;
+          background-color: transparent;
+          border-bottom: 2rpx solid #E2D6D6FF;
+        }
+      }
+
+      .icons {
+        .van-checkbox__icon-wrap {
+          line-height: 0;
+        }
+      }
+
+      .pwd-action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 28rpx;
+
+        .rem {
+          color: #000000A6;
+        }
+
+        .forget {
+          color: #E0201EFF;
+        }
+
+      }
+    }
+
+    .btn-login {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 28rpx;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: #E0201EFF;
+      font-size: 36rpx;
+      border-radius: 60rpx;
+      margin: 200rpx 0;
+    }
+
+    .agreement {
+      width: 100%;
+      font-size: 24rpx;
+      color: #00000073;
+
+      .link-text {
+        color: #E0201EFF;
+      }
+    }
+  }
+}

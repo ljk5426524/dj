@@ -1,0 +1,60 @@
+<view class="page">
+  <view class="bg-top">
+    <image style="top:{{buttonClientRect.top +2}}px" bindtap="back" class="icon-back" src="/res/images/icon-back.png" />
+    <image class="head-bg" src="https://app.kbing123.com/mdedia/home-bg-red.png" />
+    <div style="top:{{buttonClientRect.top +2}}px" class="logo">组织生活水平</div>
+  </view>
+  <view class="menu-items">
+    <view class="select-item color">
+      <view>全部支出</view>
+      <i class="arrow" />
+    </view>
+    <view class="title-content">
+      <view class="title">各支部组织生活排行榜</view>
+      <view class="select-item">
+        全部活动类型
+        <i class="arrow" />
+      </view>
+    </view>
+    <view class="panel">
+      <medal-charts></medal-charts>
+      <table-collepse-list></table-collepse-list>
+    </view>
+    <view class="title-content">
+      <view class="title">组织生活时间分布</view>
+      <view class="select-item">
+        全部活动类型
+        <i class="arrow" />
+      </view>
+    </view>
+    <view class="charts-user">
+      <ec-canvas id="chartPie" class="charts" canvas-id="mychartPie" ec="{{ ec }}"></ec-canvas>
+    </view>
+    <view class="title-content">
+      <view class="title">活动类型分布</view>
+    </view>
+    <view class="charts-user">
+      <ec-canvas id="chartPie" class="charts" canvas-id="mychartPie" ec="{{ ec2 }}"></ec-canvas>
+    </view>
+    <view class="title-content">
+      <view class="title">组织生活明细列表</view>
+    </view>
+    <view class="life-table">
+      <view class="tr">
+        <view class="td-text">姓名</view>
+        <view class="td-text">党支部</view>
+        <view class="td-text">所属部门</view>
+      </view>
+      <view class="td">
+        <view class="td-text">test用户</view>
+        <view class="td-text">28</view>
+        <view class="td-text">人事部</view>
+      </view>
+      <view class="td">
+        <view class="td-text">test用户</view>
+        <view class="td-text">28</view>
+        <view class="td-text">人事部</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,81 @@
+<view class="page">
+  <view class="bg-top">
+    <image style="top:{{buttonClientRect.top +2}}px" bindtap="back" class="icon-back" src="/res/images/icon-back.png" />
+    <image class="head-bg" src="https://app.kbing123.com/mdedia/bg-red.png" />
+    <div style="top:{{buttonClientRect.top +2}}px" class="logo">支部建设情况</div>
+  </view>
+  <view class="info-content">
+    <view class="info">
+      <view class="select-item" bindtap="openSel">
+        {{currentOrg}}
+        <i class="arrow" />
+      </view>
+      <view class="info-items">
+        <image class="avator" src="{{adminList[0]?adminList[0].head:''}}" />
+        <view class="info-item">
+          <view class="name">
+            {{adminList[0]?adminList[0].userName:'暂无党支部书记'}}
+            <text class="dept">{{currentOrg}}</text>
+          </view>
+          <view class="job">党支部书记</view>
+        </view>
+      </view>
+    </view>
+    <view class="menu-items">
+      <view class="title-content">
+        <view class="title">党员分布</view>
+      </view>
+      <view class="charts-user">
+        <view class="charts" hidden="{{deptShow}}">
+          <ec-canvas id="chartPie" class="charts" canvas-id="mychartPie" ec="{{ ec }}"></ec-canvas>
+        </view>
+      </view>
+      <view class="title-content">
+        <view class="title">支部书记风采</view>
+      </view>
+      <view class="member-items">
+        <view class="member" wx:for="{{adminList}}" wx:key="{{item.id}}">
+          <image class="avator" src="{{item.head}}" />
+          <view class="name">{{item.userName}}</view>
+          <view class="dept">{{currentOrg}}</view>
+          <view class="job">党支部书记</view>
+        </view>
+      </view>
+      <view class="title-content">
+        <view class="title">支部成员</view>
+      </view>
+      <view class="member-items">
+        <view class="member sub" wx:for="{{userList}}" wx:key="{{item.id}}">
+          <image class="avator" src="{{item.head}}" />
+          <view class="right">
+            <view class="name">{{item.userName}}</view>
+            <view class="dept">{{currentOrg}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class="title-content">
+        <view class="title">政治生活</view>
+      </view>
+      <view class="life-table">
+        <view class="tr">
+          <view class="td-text">姓名</view>
+          <view class="td-text">党支部</view>
+          <view class="td-text">所属部门</view>
+        </view>
+        <view class="td">
+          <view class="td-text">test用户</view>
+          <view class="td-text">28</view>
+          <view class="td-text">人事部</view>
+        </view>
+        <view class="td">
+          <view class="td-text">test用户</view>
+          <view class="td-text">28</view>
+          <view class="td-text">人事部</view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+  <van-popup show="{{ deptShow }}" position="bottom" bind:close="onClose">
+    <van-picker show-toolbar title="部门选择" default-index="{{ defaultIdx }}" columns="{{ deptList }}" bind:confirm="onConfirm" bind:cancel="onCancel" />
+  </van-popup>
+</view>

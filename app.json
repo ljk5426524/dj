@@ -1,0 +1,77 @@
+{
+    "pages": [
+        "pages/login/index",
+        "pages/home/index",
+        "pages/score/index",
+        "pages/score-detail/index",
+        "pages/user/index",
+        "pages/table/index",
+        "pages/life/index",
+        "pages/construct/index",
+        "pages/my/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#E0201E",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "iconPath": "./res/images/navbar/home.png",
+                "selectedIconPath": "./res/images/navbar/home-active.png",
+                "pagePath": "pages/home/index",
+                "text": "党建云图"
+            },
+            {
+                "iconPath": "./res/images/navbar/book.png",
+                "selectedIconPath": "./res/images/navbar/book-active.png",
+                "pagePath": "pages/table/index",
+                "text": "党建汇总表"
+            },
+            {
+                "iconPath": "./res/images/navbar/book.png",
+                "selectedIconPath": "./res/images/navbar/book-active.png",
+                "pagePath": "pages/score/index",
+                "text": "党员积分"
+            },
+            {
+                "iconPath": "./res/images/navbar/man.png",
+                "selectedIconPath": "./res/images/navbar/man-active.png",
+                "pagePath": "pages/my/index",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {
+        "table-collepse-list": "components/table-collepse-list/index",
+        "medal-charts": "components/medal-charts/index",
+        "van-search": "@vant/weapp/search/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+        "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-field": "@vant/weapp/field/index",
+        "van-popup": "@vant/weapp/popup/index",
+        "van-picker": "@vant/weapp/picker/index",
+        "van-button": "@vant/weapp/button/index",
+        "van-rate": "@vant/weapp/rate/index",
+        "van-index-bar": "@vant/weapp/index-bar/index",
+        "van-index-anchor": "@vant/weapp/index-anchor/index",
+        "van-action-sheet": "@vant/weapp/action-sheet/index",
+        "van-switch": "@vant/weapp/switch/index",
+        "van-radio": "@vant/weapp/radio/index",
+        "van-radio-group": "@vant/weapp/radio-group/index",
+        "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+        "van-uploader": "@vant/weapp/uploader/index",
+        "van-dialog": "@vant/weapp/dialog/index",
+        "van-checkbox": "@vant/weapp/checkbox/index"
+    },
+    "sitemapLocation": "sitemap.json"
+}

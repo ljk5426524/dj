@@ -1,0 +1,34 @@
+<view>
+  <view class="medal-content">
+    <view class="platform-content">
+      <image class="avator" src="{{medalData[1].head}}" />
+      <image class="platform" src="/res/images/home/second_bg.png" />
+      <image class="medal" src="/res/images/home/second.png" />
+      <view class="medal-info" bind:tap="collepseItem" data-org="{{medalData[1].organizationId}}" data-uid="{{medalData[1].userId}}">
+        <view class="title">{{medalData[1].userName}}</view>
+        <view class="sub-title">{{medalData[1].organizationName}}</view>
+        <view class="val">{{medalData[1].totalScore}}</view>
+      </view>
+    </view>
+    <view class="platform-content">
+      <image class="avator" src="{{medalData[0].head}}" />
+      <image class="platform" src="/res/images/home/first_bg.png" />
+      <image class="medal" src="/res/images/home/first.png" />
+      <view class="medal-info" bind:tap="collepseItem" data-org="{{medalData[0].organizationId}}" data-uid="{{medalData[0].userId}}">
+        <view class="title">{{medalData[0].userName}}</view>
+        <view class="sub-title">{{medalData[0].organizationName}}</view>
+        <view class="val">{{medalData[0].totalScore}}</view>
+      </view>
+    </view>
+    <view class="platform-content">
+      <image class="avator" src="{{medalData[2].head}}" />
+      <image class="platform" src="/res/images/home/third_bg.png" />
+      <image class="medal" src="/res/images/home/third.png" />
+      <view class="medal-info" bind:tap="collepseItem" data-org="{{medalData[2].organizationId}}" data-uid="{{medalData[2].userId}}">
+        <view class="title">{{medalData[2].userName}}</view>
+        <view class="sub-title">{{medalData[2].organizationName}}</view>
+        <view class="val">{{medalData[2].totalScore}}</view>
+      </view>
+    </view>
+  </view>
+</view>

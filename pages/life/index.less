@@ -1,0 +1,129 @@
+.page {
+  min-height: 100vh;
+  background-color: #f9fafc;
+
+  .bg-top {
+    position: relative;
+    height: 480rpx;
+    background-color: #ff0000;
+
+    .head-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .icon-back {
+      position: absolute;
+      left: 20rpx;
+      width: 50rpx;
+      height: 50rpx;
+      color: #fff;
+      z-index: 1;
+    }
+
+    .logo {
+      top: 40rpx;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff
+    }
+  }
+
+  .menu-items {
+    position: relative;
+
+    margin: -300rpx 0 0;
+    border-radius: 32rpx 32rpx 0 0;
+    background-color: #fff;
+    padding: 32rpx;
+
+    .arrow {
+      border: 12rpx solid transparent;
+      border-top-color: #000000A6;
+    }
+
+    .select-item {
+      position: relative;
+      margin-bottom: 40rpx;
+      font-size: 28rpx;
+      color: #000000A6;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 12rpx;
+
+      &.color {
+        border-radius: 16rpx;
+        width: 216rpx;
+        padding: 20rpx 32rpx;
+        background: linear-gradient(180deg, #FFDDDD 0%, #FFF7F7 100%);
+      }
+
+    }
+
+    .title-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16rpx;
+
+      .title {
+        color: #000;
+        font-size: 36rpx;
+        font-weight: bold;
+      }
+    }
+
+    .panel {
+      padding: 30rpx 0;
+    }
+
+    .charts-user {
+      margin: 20rpx 0;
+      width: 100%;
+      height: 532rpx;
+      border-radius: 16rpx;
+      background: linear-gradient(180deg, #FFE8E8 0%, rgba(255, 247, 247, 0.35) 100%);
+
+      .charts {
+        width: 100%;
+        height: 532rpx;
+      }
+    }
+
+    .life-table {
+      width: 100%;
+
+      border-radius: 8rpx;
+
+      .tr {
+        height: 80rpx;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 28rpx;
+        color: #000000A6;
+        background: linear-gradient(180deg, #FFE8E8 0%, rgba(255, 247, 247, 0.35) 100%);
+      }
+
+      .td {
+        height: 80rpx;
+        font-size: 28rpx;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: #000000D9;
+        border-bottom: 2rpx solid #ECEEF3FF;
+      }
+
+      .td-text {
+        width: 200rpx;
+        text-align: center;
+      }
+    }
+  }
+}

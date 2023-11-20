@@ -1,0 +1,40 @@
+<view class="page">
+  <image class="bg" src="https://app.kbing123.com/mdedia/bg-login.png" />
+  <view class="login-cotent">
+    <view>
+      <view class="welcome">欢迎来到</view>
+      <view class="title">淮阳区党建先锋</view>
+    </view>
+    <view class="input-items">
+      <view class="input-content">
+        <view class="label">账号</view>
+        <view>
+          <van-field custom-class="input-item" model:value="{{ account }}" placeholder="请输入您的账号" border="{{ false }}" />
+        </view>
+      </view>
+      <view class="input-content">
+        <view class="label">密码</view>
+        <view>
+          <van-field custom-class="input-item" type="password" model:value="{{ password }}" placeholder="请输入密码" border="{{ false }}" />
+        </view>
+      </view>
+      <view class="pwd-action">
+        <view class="rem">
+          <van-checkbox custom-class="icons" value="{{ remChecked }}" shape="square" icon-size="14px" checked-color="#E0201E" bind:change="onRemCheckChange">
+            记住密码
+          </van-checkbox>
+        </view>
+        <view class="forget" bindtap="forget">忘记密码？</view>
+      </view>
+    </view>
+    <view class="btn-login" bindtap="login">登录</view>
+    <view class="agreement">
+      <van-checkbox custom-class="icons" value="{{ checked }}" shape="square" icon-size="14px" checked-color="#E0201E" bind:change="onCheckboxChange">
+        阅读
+        <text class="link-text" catchtap="toAgreement" data-id="{{1}}">《用户服务协议》</text>
+        和
+        <text class="link-text" catchtap="toAgreement" data-id="{{2}}">《用户隐私政策》</text>
+      </van-checkbox>
+    </view>
+  </view>
+</view>

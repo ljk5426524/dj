@@ -1,0 +1,28 @@
+<view>
+  <view class="list-content">
+    <view class="bg"></view>
+    <view wx:for="{{list}}" wx:key="id" class="list-item">
+      <view class="title-line">
+        <view class="idx">{{index+4}}</view>
+        <view class="info">
+          <image class="avator" src="{{item.head}}" />
+          <view>
+            <view class="name">{{item.userName}}</view>
+            <view class="dept">{{item.organizationName}}</view>
+          </view>
+        </view>
+        <view class="val">{{item.totalScore}}</view>
+        <view class="btn-collepse" bind:tap="collepseItem" data-open="{{item.open}}" data-org="{{item.organizationId}}" data-uid="{{item.userId}}" data-index="{{index}}">
+          <van-icon wx:if="{{item.open === 0}}" name="arrow" />
+          <van-icon wx:if="{{item.open === 1}}" name="arrow-down" />
+        </view>
+      </view>
+      <view hidden="{{item.open === 0}}" class="data-list">
+        <view class="data-item" wx:for="{{item.list}}" wx:for-item="year" wx:key="year">
+          <view>{{year.year}}</view>
+          <view>{{year.count}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

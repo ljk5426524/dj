@@ -1,0 +1,58 @@
+<view class="page">
+  <view class="bg-top">
+    <image style="top:{{buttonClientRect.top +2}}px" bindtap="back" class="icon-back" src="/res/images/icon-back.png" />
+    <image class="head-bg" src="https://app.kbing123.com/mdedia/home-bg-red.png" />
+    <div style="top:{{buttonClientRect.top +2}}px" class="logo">支部建设情况</div>
+  </view>
+  <view class="info-content">
+    <view class="info">
+      <view class="select-item" bindtap="openSel">
+        {{currentOrg}}
+        <i class="arrow" />
+      </view>
+      <view class="info-item">
+        <van-search background="#ffffff00" value="{{ value }}" bind:search="onSearch" bind:change="inputChange" placeholder="请输入搜索关键词" />
+      </view>
+    </view>
+    <scroll-view scroll-y="{{true}}" bindscrolltolower="loadMore" class="menu-items">
+      <view class="table-item" wx:for="{{list}}" wx:key="id">
+        <view class="title">
+          {{item.name}}
+          <view class="btn" bindtap="exportTable" data-year="{{item.year}}" data-month="{{item.month}}" data-name="{{item.name}}" data-oid="{{item.ornanizationId}}">
+            导出
+          </view>
+        </view>
+        <view class="info">
+          <view class="label-content">
+            <view class="label">所属支部：</view>
+            <view class="value">{{item.organizationName}}</view>
+          </view>
+          <view class="label-content">
+            <view class="label">所属年度/季度：</view>
+            <view class="value">{{item.year}}年度/{{item.month}}月</view>
+          </view>
+        </view>
+        <view class="icon-content">
+          <view class="{{['icon-item',item.plan?'active':'']}}">
+            <image hidden="{{item.plan}}" class="icon" src="/res/images/icon-book.png" />
+            <image hidden="{{!item.plan}}" class="icon" src="/res/images/icon-book.png" />
+            <view>计划要点</view>
+          </view>
+          <view class="{{['icon-item',item.theme?'active':'']}}">
+            <image hidden="{{item.theme}}" class="icon" src="/res/images/icon-star-grey.png" />
+            <image hidden="{{!item.theme}}" class="icon" src="/res/images/icon-star-red.png" />
+            <view>主题党日</view>
+          </view>
+          <view class="{{['icon-item',item.partyMember?'active':'']}}">
+            <image hidden="{{item.partyMember}}" class="icon" src="/res/images/icon-msg-grey.png" />
+            <image hidden="{{!item.partyMember}}" class="icon" src="/res/images/icon-msg-red.png" />
+            <view>三会一课</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <van-popup show="{{ deptShow }}" position="bottom" bind:close="onClose">
+    <van-picker show-toolbar title="部门选择" default-index="{{ defaultIdx }}" columns="{{ deptList }}" bind:confirm="onConfirm" bind:cancel="onCancel" />
+  </van-popup>
+</view>

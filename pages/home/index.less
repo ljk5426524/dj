@@ -1,0 +1,251 @@
+.page {
+  min-height: 100vh;
+  background-color: #f9fafc;
+
+  .bg-top {
+    position: relative;
+    height: 480rpx;
+    background-color: #ff0000;
+
+    .head-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo {
+      top: 40rpx;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff
+    }
+  }
+
+
+
+  .menu-items {
+    position: relative;
+
+    margin: -100rpx 0 0;
+    border-radius: 32rpx 32rpx 0 0;
+    background-color: #fff;
+    padding: 32rpx;
+
+    .title-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16rpx;
+
+      .title {
+        color: #000;
+        font-size: 36rpx;
+        font-weight: bold;
+      }
+
+      .more {
+        color: #000000A6;
+        font-size: 28rpx;
+      }
+    }
+  }
+
+  .panel {
+    display: flex;
+    margin-bottom: 48rpx;
+
+    &.inline {
+      justify-content: space-between;
+    }
+
+    &.column {
+      flex-direction: column;
+    }
+
+    .static-left {
+      position: relative;
+      width: 470rpx;
+      height: 160rpx;
+      display: flex;
+      justify-content: space-around;
+
+      .static-bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .static-right {
+      width: 200rpx;
+      height: 160rpx;
+      background: linear-gradient(101deg, #FFEFE2 0%, #FFF9F4 100%);
+      border-radius: 16rpx;
+    }
+
+    .static-text {
+      position: relative;
+      box-sizing: border-box;
+      padding: 18rpx 32rpx;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+
+      &.double {
+        width: 50%;
+      }
+
+      .text-label {
+        font-size: 28rpx;
+        color: #000000A6;
+      }
+
+      .text-val {
+        font-size: 48rpx;
+        color: #000A2F;
+        font-weight: bold;
+
+        .val-unit {
+          font-size: 24rpx;
+        }
+      }
+    }
+
+
+    .dept-item {
+      box-sizing: border-box;
+      position: relative;
+      width: 100%;
+      height: 128rpx;
+      border-radius: 16rpx;
+      margin-bottom: 16rpx;
+      padding: 16rpx 32rpx;
+
+      &.one {
+        background: linear-gradient(180deg, #FFF2E8 0%, rgba(255, 246, 239, 0.35) 100%);
+      }
+
+      &.two {
+        background: linear-gradient(179deg, #FFE8E8 0%, rgba(255, 247, 247, 0.35) 100%);
+      }
+
+      &.three {
+        background: linear-gradient(180deg, #F3FAFE 0%, rgba(231, 241, 247, 0.2) 100%);
+      }
+
+      .icon-medel {
+        position: absolute;
+        top: 0;
+        left: 28rpx;
+        width: 56rpx;
+        height: 56rpx;
+      }
+
+      .item-text {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .name {
+          font-size: 28rpx;
+          color: #000000A6;
+        }
+
+        .val {
+          font-size: 48rpx;
+          color: #000A2F;
+          font-weight: bold;
+          line-height: 1;
+        }
+
+        .val-unit {
+          font-size: 24rpx;
+        }
+      }
+    }
+  }
+
+  .charts-user {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20rpx 0;
+    width: 100%;
+    height: 332rpx;
+    border-radius: 16rpx;
+    padding-right: 20rpx;
+    background: linear-gradient(180deg, #FFE8E8 0%, rgba(255, 247, 247, 0.35) 100%);
+
+    .charts {
+      width: 50%;
+      height: 332rpx;
+    }
+
+    .right-content {
+      box-sizing: border-box;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20rpx;
+
+      .chart-item {
+        box-sizing: border-box;
+        position: relative;
+        width: 350rpx;
+        height: 56rpx;
+        padding: 20rpx 10rpx 20rpx 30rpx;
+        background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #FFF8F8 100%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 24rpx;
+
+        &.color1 {
+          &:before {
+            background-color: #FFD772FF;
+          }
+        }
+
+        &.color2 {
+          &:before {
+            background-color: #FF823BFF;
+          }
+        }
+
+        &.color3 {
+          &:before {
+            background-color: #599DFBFF;
+          }
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 2rpx;
+          height: 100%;
+        }
+
+        .label {
+          width: 160rpx;
+        }
+
+        .percent {
+          color: #00000073;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,100 @@
+.medal-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 450rpx;
+  margin-bottom: 30rpx;
+
+  .platform-content {
+    position: relative;
+    width: 230rpx;
+    height: 238rpx;
+
+    &:first-child {
+      color: #EB7A3E;
+
+      .avator {
+        border-color: #EB7A3E;
+      }
+    }
+
+    &:nth-child(2) {
+      height: 302rpx;
+      color: #F0A800;
+
+      .avator {
+        width: 112rpx;
+        height: 112rpx;
+        top: -116rpx;
+        border-color: #F0A800;
+      }
+
+      .medal-info {
+        bottom: 60rpx;
+
+        .val {
+          font-size: 48rpx;
+        }
+      }
+    }
+
+    &:last-child {
+      color: #9FAECE;
+
+      .avator {
+        border-color: #9FAECE;
+      }
+    }
+
+    .avator {
+      z-index: 1;
+      position: absolute;
+      width: 96rpx;
+      height: 96rpx;
+      border-radius: 50%;
+      top: -100rpx;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 4rpx solid #F0A800;
+    }
+
+    .platform {
+      width: 100%;
+      height: 100%;
+    }
+
+    .medal {
+      width: 82rpx;
+      height: 90rpx;
+      position: absolute;
+      top: -20rpx;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .medal-info {
+      height: 160rpx;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      .title {
+        font-size: 32rpx;
+        font-weight: bold;
+      }
+
+      .sub-title {
+        font-size: 24rpx;
+      }
+
+      .val {
+        font-size: 36rpx;
+        font-weight: bold;
+      }
+    }
+  }
+}
